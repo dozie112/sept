@@ -1,7 +1,12 @@
+name: Node contniuos Intergation
 on : push
 jobs : 
-    first-job:
+    build-job:
+        name : Build Node
         runs-on : ubuntu-latest
+        container : node:14
         steps:
             - run : node --version
             - run : npm --version
+            - uses : actions/checkout@v2
+            - run : dir
